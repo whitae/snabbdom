@@ -1,5 +1,6 @@
 import vnode from './vnode'
 import createElement from './createElement'
+import patchVnode from './patchVndoe'
 
 export default function (oldvnode, newvnode) {
     if (oldvnode.sel == '' || oldvnode.sel == undefined) {
@@ -13,6 +14,7 @@ export default function (oldvnode, newvnode) {
     if (oldvnode.key == newvnode.key && oldvnode.sel == newvnode.sel) {
         // TODO是同一个节点 
         // 需要精细化比较
+        patchVnode(oldvnode, newvnode);
     } else {
         // TODO不是同一个节点
         // 将新的插入，然后删除旧的
