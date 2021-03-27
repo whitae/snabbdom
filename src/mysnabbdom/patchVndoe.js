@@ -14,6 +14,7 @@ export default function(oldvnode, newvnode){
         // 新的vnode有子节点,没有text属性
         if (oldvnode.children != undefined && oldvnode.children.length > 0){
             //老的vndoe有子节点，要进行细微比较
+            // TODO这个部分太复杂了，留着以后有机会再看吧
         }else{
             // 老的没有children，直接把新的节点创建成DOM添加进去即可
             // 先清空老节点内部的文字内容
